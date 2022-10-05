@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>HTML Forms: Art Gallery Submissions</h1>
-    <form name="art-gallery-submissions" id="art-gs" method="post">
+    <form name="art-gallery-submissions" id="art-gs" method="get">
         <label for="art-title">Please Enter the Title of Your Masterpeice [required]:</label>
         <input type="text" name="art-name" id="art-title" required />
 
@@ -23,18 +23,21 @@
         <br/>
         <br/>
 
+        <!--radio, can only select one. contained by fieldset, "legend" is the text that breaks up the line, meant to describe relation. 
+            the form attribute links the fieldset to the form-->
         <fieldset form="art-gs" name="digital-or-physical">
             <legend>
                 Is your art digital or physical?
             </legend>
 
+            <!--value provides the server with information if the box is checked. here the server would see art-medium=Digital or art-medium=Physical-->
             <input type="radio" name="art-medium" id="digital" value="Digital"/>
             <label for="digital">Digital</label>
             <input type="radio" name="art-medium" id="physical" value="Physical"/>
             <label for="physical">Physical</label>
         </fieldset>
 
-        <br/>
+        <br/>  
 
         <label for="rating">Rate your art out of 10</label>
         <input type="number" name="art-rating" id="rating" min="1" max="5"/>
@@ -47,11 +50,15 @@
         <br/>
         <br/>
 
+        <!--Text area, multiple lines of information-->
         <label for="description">Give your art a description:</label>
+        <br />
         <textarea id="description" name="art-desc" rows="5" cols="32"></textarea>
 
         <br/>
+        <br/>
 
+        <!--drop down select, not very accessible to screen readers. don't use if a different type is sufficient.-->
         <label for="location">Where are you submitting from?</label>
         <select name="location" id="location">
             <option value="n-america">North America</option>
@@ -75,8 +82,9 @@
 
         <br/>
 
+            <!--pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" ?-->
         <label for="phone">If you would like to be called when your art is up, please enter your phone number:</label>
-        <input type="tel" name="phone-number" id="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/>
+        <input type="tel" name="phone-number" id="phone"  minlength="14" maxlength="22" />
 
         <br />
 
@@ -86,13 +94,23 @@
         <br/>
         <br/>
 
-        <input type="submit" />
-        <input type="reset"/>
-        <input type="button" onclick="alert('Thanks for sharing!')" value="Goodbye!"/>
+            <!--
+                here value is a optional atrribute to change the buttons default text
+
+                submit MUST be inside form tag
+            -->
+        <input type="submit" name="submitButton" id="submit" value="Press to Submit"/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <input type="reset" name="resetButton" id="reset" value="Press to Reset Answers" />
 
         <!--
             <label for="password">Please Enter Your Password (required):</ label>
             <input type="password" name="userPassword" id="password" minlength="12" required/>
+
+            <input type="button" onclick="alert('Thanks for sharing!')" value="Goodbye!"/>
         -->
     </form>
 </body>
