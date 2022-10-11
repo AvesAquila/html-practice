@@ -25,12 +25,17 @@
       <br />
       <br />
 
-      <!--radio, can only select one. contained by fieldset, "legend" is the text that breaks up the line, meant to describe relation. 
-            the form attribute links the fieldset to the form-->
+      <!--
+        radio, can only select one. contained by fieldset, "legend" is the text that breaks up the line, meant to describe relation. 
+        the form attribute links the fieldset to the form
+      -->
       <fieldset form="art-gs" name="digital-or-physical">
         <legend>Is your art digital or physical?</legend>
 
-        <!--value provides the server with information if the box is checked. here the server would see art-medium=Digital or art-medium=Physical-->
+        <!--
+          value provides the server with information if the box is checked. 
+          here the server would see art-medium=Digital or art-medium=Physical
+        -->
         <input type="radio" name="art-medium" id="digital" value="Digital" />
         <label for="digital">Digital</label>
         <input type="radio" name="art-medium" id="physical" value="Physical" />
@@ -92,10 +97,10 @@
       <br />
 
       <!--pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" ?-->
-      <label for="phone"
-        >If you would like to be called when your art is up, please enter your
-        phone number:</label
-      >
+      <label for="phone">
+        If you would like to be called when your art is up, please enter your
+        phone number:
+      </label>
       <input
         type="tel"
         name="phone-number"
@@ -106,29 +111,30 @@
 
       <br />
 
-      <label for="credit"
-        >Would you like to be credited using Email and name provided?</label
-      >
       <input type="checkbox" name="credit-check" id="credit" />
+      <label for="credit">
+        Would you like to be credited using Email and name provided?
+      </label>
 
       <br />
       <br />
 
       <!--
-                here value is a optional atrribute to change the buttons default text
-
-                submit MUST be inside form tag
-            -->
+        here value is a optional atrribute to change the buttons default text
+        submit MUST be inside form tag
+      -->
       <input
         type="submit"
         name="submitButton"
         id="submit"
         value="Press to Submit"
       />
+
       <br />
       <br />
       <br />
       <br />
+
       <input
         type="reset"
         name="resetButton"
@@ -137,11 +143,11 @@
       />
 
       <!--
-            <label for="password">Please Enter Your Password (required):</ label>
-            <input type="password" name="userPassword" id="password" minlength="12" required/>
+        <label for="password">Please Enter Your Password (required):</ label>
+        <input type="password" name="userPassword" id="password" minlength="12" required/>
 
-            <input type="button" onclick="alert('Thanks for sharing!')" value="Goodbye!"/>
-        -->
+        <input type="button" onclick="alert('Thanks for sharing!')" value="Goodbye!"/>
+      -->
     </form>
   </body>
 </html>
